@@ -1,0 +1,36 @@
+Rails基礎2
+・MVC以外のデザインパターン
+http://qiita.com/tshinsay/items/5b1724baf32b8b5113c2
+
+・generateコマンドで作成したものを削除するコマンド
+　◯destroy
+
+・generateコマンドで作成するのと、ひとつずつファイル作成やフォルダ作成をするのはどちらがよいか
+　◯generateコマンドで作成する。　漏れがなくなるしはやくできる？
+
+・generateコマンドのscaffoldというコマンドは何を行うコマンドか？
+　コントローラ、ビュー、モデル
+マイグレーション、アセット、ルート、テスト、ヘルパーのファイルを作成する。
+
+・Railsの命名規則同様、メソッドや変数の命名で気をつけることとは？
+　変数→＠をつけるとインスタンス変数
+　他の人が見てもわかるような意味にする
+https://qiita.com/gakkie/items/3afcd505c786364aa5fa
+　メソッド？
+
+・GETメソッドで、/hogeというリクエストが来た際、fugaコントローラのfugafugaアクションを呼び出すルーティングを記述せよ。
+　Rails.application.routes.draw do
+　get '/hoge', to:'fuga#fugafuga'
+ end
+
+
+＜Rails入門4＞
+・ edit.html.erbのビュー
+→app/views/blogs/edit.html.erbのビュー
+＜Rails入門5＞
+・o/rマッピングとはなにか。
+オブジェクト指向と、RDBの表のデータを照らし合わせる
+→関係データベース（RDB)のレコードをオブジェクトとして直感的に扱えるようにする。
+
+・database.ymlの設定をするときにどのようなドキュメントを読めばよいか
+Ruby on　Railsにおけるdatabase.ymlの設定方法

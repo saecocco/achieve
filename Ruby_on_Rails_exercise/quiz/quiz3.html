@@ -1,0 +1,40 @@
+＜Rails基礎6＞
+・sudoコマンドはどのようなコマンドか
+sudoは指定したユーザでコマンドを実行する。
+デフォルトでは、root権限で実行する。
+
+・serviceコマンドはどのようなコマンドか
+指定されたLinuxデーモン（サービス）の起動や停止、ステータスの確認を実行する。
+
+・データベースを作成するコマンドは　rails db:createだが、削除するコマンドはなにか。
+rails db:drop
+
+＜Rails基礎7＞
+・カラム名を変更したい場合、マイグレーションファイル名はどのような名前にするべきか、今回はblogsテーブルのtitleカラムをnameカラムに変更したい
+rails generate miguration rename_title_columun_to_blogs
+
+＜Rails基礎8＞
+・マイグレーションをすべてやり直すコマンド
+rails db:migrate:reset
+
+＜Rails基礎9＞
+・カラム名を変更したい場合、マイグレーションファイルにどのように記述するか。今回はblogsテーブルのtitleカラムをnameカラムに変更したい
+<!-- class RenameTitleColumnToBlogs < ActiveRecord:miguration
+  def change
+    rename_column :blogs, :title, :rename_column
+  end
+end   -->
+
+＜Rails基礎10＞
+・schema.rbをみて、テーブルの状態を確認するには、SQLを使用してテーブルの状態を確認する場合と比べてどのようなメリットがあるか
+スキーマファイルはActiveRecordのオブジェクトにどのような属性があるのかを概観するのに便利。
+スキーマ情報は多くのマイグレーションに分かれて存在しており、
+そのままでは非常に探しにくいですが、スキーマファイルにコンパクトにまとまっています。
+
+・実は、schema.rbの役割はテーブルの状態を確認するだけではない
+schema.rbが他にどのような役割を持っているか。
+rails db:schema:dump
+現在のスキーマからshema.rbを作成する
+
+rails db: shema:load
+shema.rbからテーブルを作成する
